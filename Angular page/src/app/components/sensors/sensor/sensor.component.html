@@ -1,0 +1,24 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #sensorForm="ngForm" (ngSubmit)="onSubmit(sensorForm)">
+          <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                name="value"
+                #value="ngModel"
+                [(ngModel)]="sensorService.selectValue.$value"
+                placeholder="Add A Value"
+                >
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> Add A value
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(sensorForm)">
+                <i class="fas fa-sync-alt"></i> Reset
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
